@@ -102,3 +102,6 @@ ENV/
 
 # Image
 *jpg
+data_tmp/
+log/
+results/
