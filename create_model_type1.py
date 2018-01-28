@@ -10,7 +10,7 @@ if not os.path.exists('./model'):
     os.mkdir('./model')
 model_base_dir = './model/'
 filename_prefix = dt.now().strftime('%Y%m%d%H%M%S')
-filename_suffix = 'type2'
+filename_suffix = 'type1'
 if not os.path.exists('./model/' + filename_prefix + '_' +  filename_suffix):
     os.mkdir('./model/' + filename_prefix + '_' +  filename_suffix)
 model_dir = './model/' + filename_prefix + '_' +  filename_suffix
