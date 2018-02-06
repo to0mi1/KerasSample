@@ -1,0 +1,1 @@
+model/20180129001257_type2/20180129001257_type2_model.json	male,female	RMSprop	150	150	8	30	40	0.2	0.2	0.2	0.2	TRUE	FALSE
