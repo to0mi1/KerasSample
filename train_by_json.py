@@ -18,11 +18,11 @@ result_dir = './results/' + filename_prefix
 if not os.path.exists(result_dir):
     os.mkdir(result_dir)
 
-def train(model, optimizer='Adam', classes=['1', '2'], targetsize_width=150, targetsize_height=150, batch_size=16, epochs=30, imagedatagen_args={'rescale' : 1 / 255}):
+def train(model_path, optimizer='Adam', classes=['1', '2'], targetsize_width=150, targetsize_height=150, batch_size=16, epochs=30, imagedatagen_args={'rescale' : 1 / 255}):
     # モデルの読み込み
-    print('load the model of ' + model)
+    print('load the model of ' + model_path)
     print('set the optimizer to ' + optimizer)
-    model_json = open(os.path.join(model)).read()
+    model_json = open(os.path.join(model_path)).read()
     model = model_from_json(model_json)
     model.compile(loss='binary_crossentropy',
                   optimizer=optimizer,
@@ -91,7 +91,7 @@ def train(model, optimizer='Adam', classes=['1', '2'], targetsize_width=150, tar
         history.history['val_loss'][-1],
         history.history['val_acc'][-1]))
     
-    csv_row = [model, optimizer, classes, targetsize_width, targetsize_height,
+    csv_row = [model_path, optimizer, classes, targetsize_width, targetsize_height,
                batch_size, epochs, imagedatagen_args,
                history.history['loss'][-1], history.history['acc'][-1],
                history.history['val_loss'][-1], history.history['val_acc'][-1]]
