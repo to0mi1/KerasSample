@@ -1,5 +1,5 @@
-'''train'''
 # -*- coding: utf-8 -*-
+'''train'''
 import os
 from datetime import datetime as dt
 import argparse
@@ -18,7 +18,7 @@ result_dir = './results/' + filename_prefix
 if not os.path.exists(result_dir):
     os.mkdir(result_dir)
 
-def train(model_path, optimizer='Adam', classes=['1', '2'], targetsize_width=150, targetsize_height=150, batch_size=16, epochs=30, imagedatagen_args={'rescale' : 1 / 255}):
+def train(model_path, optimizer='Adam', classes=['1', '2'], targetsize_width=150, targetsize_height=150, batch_size=16, epochs=30, imagedatagen_args={'rescale' : 1.0 / 255}):
     # モデルの読み込み
     print('load the model of ' + model_path)
     print('set the optimizer to ' + optimizer)
@@ -123,7 +123,7 @@ if __name__ == '__main__':
     classes = args.classes.split(',')
 
     imagedatagen_args = {
-        'rescale' : 1 / 255,
+        'rescale' : 1.0 / 255,
         'rotation_range': args.rotation_range,
         'width_shift_range': args.width_shift_range,
         'height_shift_range': args.height_shift_range,

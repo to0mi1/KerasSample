@@ -106,3 +106,5 @@ data_tmp/
 log/
 results/
 model/
+.vscode/settings.json
+data/
